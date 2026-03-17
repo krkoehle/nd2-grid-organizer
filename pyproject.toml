@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nd2grid"
+version = "0.1.0"
+description = "Organize Nikon .nd2 microscopy images into PowerPoint grids"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "nd2>=0.10",
+    "python-pptx>=1.0",
+    "numpy>=1.24",
+    "Pillow>=10.0",
+]
+
+[project.scripts]
+nd2grid = "nd2grid.nd2_to_pptx:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
